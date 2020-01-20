@@ -1,0 +1,42 @@
+.card {
+    border:none;
+    margin-bottom:0px !important;
+    a {
+        font-size:14.6px;
+        font-weight:700;
+        color:rgba(0,0,0,0.7) !important;
+        &.active:before {
+            content:'>'
+        }
+    }
+    .arrow-active {
+        position: absolute;
+        bottom: 30px;
+        left: 2px;
+    }
+    .card-body {
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        width:100%;
+        transition:0.4s ease-in-out;
+        cursor:pointer;
+        &:hover {
+            background-color:rgba(0,0,0,0.05);
+        }
+    }
+    a {
+        margin-bottom:0px;
+    }
+    .card-right-box {
+        display:flex;
+        flex-direction:column;
+        float:right;
+        font-size: 12.5px;
+        color: rgba(0, 0, 0, 0.3) !important;
+    }
+    .card-description {
+        color:rgba(0,0,0,0.35) !important;
+    }
+
+}

@@ -1,0 +1,40 @@
+// Text to pop
+@keyframes pop {
+    0% {
+        transform: matrix(1, 2, -1, 1, 0, 0);
+        color:white;
+    }
+    100% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        color:white;
+    }
+}
+// Cards to pop
+@keyframes popCards {
+    0% {
+        color:white;
+        transform:scale(1.1);
+    }
+    100% {
+        color:white;
+    }
+}
+
+// Background Position
+@keyframes b-position {
+    from {
+        background-position:10% 50%;
+    }
+    to {
+        background-position:30% 30%;
+    }
+}
+
+@-webkit-keyframes b-position {
+    from {
+        background-position:10% 50%;
+    }
+    to {
+        background-position:30% 30%;
+    }
+}
