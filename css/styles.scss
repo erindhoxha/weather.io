@@ -203,6 +203,7 @@ textarea {
   /* Style adjustments for high resolution devices */
 }
 
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -270,6 +271,8 @@ textarea {
 
 body {
     min-height:100vh;
+    width:100%;
+    overflow-x:hidden;
     background-color:rgba(255,255,255,1);
 }
 a {
@@ -286,13 +289,13 @@ h3, h4, h5 {
     height:70vh !important;
     max-height:70vh;
     min-height:600px;
-    background-position: 30% 30%;
     background-size:cover;
     -webkit-animation-name: b-position; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
     animation-name: b-position;
-    animation-duration: 2.3s;
+    animation-duration: 2.5s;
     animation-timing-function: ease-in-out;
+    animation-direction: reverse;
 }
 .banner.cloudy {
     background-image:url('../img/cloudy-01.svg');
@@ -302,7 +305,6 @@ h3, h4, h5 {
 }
 .overlay {
     position:relative;
-    -webkit-background-clip: border-box;
     height:100%;
     display:flex;
     justify-content: center;
@@ -334,7 +336,7 @@ h3, h4, h5 {
 
 .weather-ui-banner {
     h3 {
-        text-shadow:1px 1px 5px rgba(0,0,0,0.3);
+        text-shadow:1px 1px 3px rgba(0,0,0,0.1);
         font-size:1.8em;
         padding-bottom:10px;
         color:white;
@@ -342,14 +344,14 @@ h3, h4, h5 {
         font-weight:700;
     }
     h4 {
-        text-shadow:1px 1px 5px rgba(0,0,0,0.3);
+        text-shadow:1px 1px 2px rgba(0,0,0,0.1);
         font-size:1.05rem;
         color:white;
         font-weight:normal;
         font-weight:500;
     }
     h2 {
-        text-shadow:1px 1px 9px rgba(0,0,0,0.2);
+        text-shadow:1px 1px 4px rgba(0,0,0,0.2);
         margin-top:0px;
         margin-bottom:0px;
         font-size:5.6rem;
@@ -368,7 +370,6 @@ h3, h4, h5 {
   padding-top:20px;
   text-align:center !important;
   margin:0 auto !important;
-  padding-left:10px;
   a {
     color:rgba(0,0,0,0.8);
     font-size:14.3px;
@@ -376,6 +377,7 @@ h3, h4, h5 {
     opacity:0.3;
     border-radius:0px !important;
     padding-bottom:20px;
+    width:33.3333333333%;
   }
   .active {
     background-color:transparent;
