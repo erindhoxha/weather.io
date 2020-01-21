@@ -354,7 +354,8 @@ header h1 {
 }
 
 .mdc-top-app-bar {
-  background-color: rgba(125, 197, 196, 0.818) !important;
+  background-color: #7dc5c4 !important;
+  z-index: 99999 !important;
 }
 
 .mdc-icon-button:focus, .mdc-icon-button:active {

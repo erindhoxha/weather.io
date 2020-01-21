@@ -1,5 +1,6 @@
 .mdc-top-app-bar {
-    background-color:rgba(125, 197, 196, 0.818) !important;
+    background-color:rgba(125, 197, 196, 1) !important;
+    z-index:99999 !important;
 }
 
 .mdc-icon-button:focus, .mdc-icon-button:active {
