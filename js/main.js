@@ -3,13 +3,13 @@ var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 // CONFIG ROUTER
 weatherApp.config(function($routeProvider) {
     $routeProvider
-    .when('/', {
-        templateUrl:'pages/home.html',
-        controller: 'homeController'
-    })
     .when('/weather', {
         templateUrl:'pages/weather.html',
         controller: 'weatherController'
+    })
+    .when('/', {
+        templateUrl:'pages/home.html',
+        controller: 'homeController'
     })
 })
 

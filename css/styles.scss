@@ -24,6 +24,9 @@ html {
   line-height: 1.4;
   font-family:'Titillium Web';
 }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -287,9 +290,12 @@ p {
 h3, h4, h5 {
   margin:0;
 }
-
+.banner.home {
+  height:100vh !important;
+  max-height:100vh;
+}
 .banner {
-    height:70vh !important;
+    height:70vh;
     max-height:70vh;
     min-height:600px;
     background-size:cover;
@@ -405,4 +411,34 @@ a.celsius {
   padding:10px;
   padding-left:15px;
   padding-right:15px;
+}
+
+.search-input {
+  &:focus {
+    outline:0;
+  }
+  background-color:white;
+  border:none;
+  width:100%;
+  margin-top:10px;
+  border-radius:40px;
+  padding:13px;
+  color:rgba(0,0,0,0.6);
+  font-weight:bold;
+  font-size:16px;
+}
+.search-button {
+  &:hover {
+    text-decoration:none;
+    background-color:rgba(255,255,255,0.6);
+  }
+  transition:0.3s ease-in-out;
+  border:2px solid white;
+  color:white;
+  padding:10px;
+  width:100%;
+  margin-top:10px;
+  border-radius:30px;
+  color:white !important;
+  font-weight:bold;
 }

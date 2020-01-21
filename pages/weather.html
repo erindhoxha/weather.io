@@ -1,1 +1,63 @@
-<h1>Weather!</h1>
+
+<div class="banner cloudy">
+    <div class="overlay cloudy">
+        <p class="currentDate">{{days[currentDate]}}, 03, 2019</p>
+
+        <div class="pajaro" style="top:80%">··</div>
+        <div id="background-wrap">
+      
+          <div class="x2">
+              <div class="cloud"></div>
+          </div>
+      
+          <div class="x3">
+              <div class="cloud"></div>
+          </div>
+      
+          <div class="x4">
+              <div class="cloud"></div>
+          </div>
+      
+          <div class="x5">
+              <div class="cloud"></div>
+          </div>
+      </div>
+        <div class="weather-ui-banner text-center">
+            <h3>{{daysTemperatures[currentDate - 1].weather[0].main}}</h3>
+            <h4>Auckland, New Zealand</h4>
+            <h2>{{celsius}}°</h2>
+
+        </div>
+          <i class="material-icons down-arrow">
+            keyboard_arrow_down
+          </i>
+    </div>
+
+
+</div>
+
+
+<nav class="nav nav-pills flex-row menu" id="nav-pills">
+    <a class="flex-sm-fill text-sm-center nav-link active" href="#">Weather</a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="#">More</a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="#">Photos</a>
+</nav>
+
+
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-12 col-xl-6 offset-xl-3 col-md-12 col-sm-12 col-xs-12 w-100 pop-cards" ng-repeat="list in daysTemperatures track by $index">
+            <div class="card" style="width: 100%; margin-bottom:30px;">
+              <i class="fas fa-caret-right arrow-active" ng-if="$index == 1"></i>
+                <div class="card-body">
+                  <a class="card-title">{{days[$index]}}</a>
+                  <!-- <a class="card-subtitle mb-2 text-muted">{{list.weather[0].main}}</a> -->
+                  <div class="card-right-box">
+                    <a class="celsius">{{list.temp.max}}°C</a>
+                    <a class="card-description">Cloudy</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
