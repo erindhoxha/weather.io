@@ -1,7 +1,12 @@
-
-<div class="banner cloudy">
+<div class="loader">
+  
+</div>
+<div class="secondloader">
+  
+</div>
+<div ng-cloak class="banner cloudy">
     <div class="overlay cloudy">
-        <p class="currentDate">{{days[currentDate]}}, 03, 2019</p>
+        <p ng-cloak class="currentDate">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE, MM, yyyy'}}</p>
 
         <div class="pajaro" style="top:80%">··</div>
         <div id="background-wrap">

@@ -24,6 +24,9 @@ html {
   line-height: 1.4;
   font-family:'Titillium Web';
 }
+html * {
+  font-family:'Titillium Web';
+}
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
@@ -424,8 +427,9 @@ a.celsius {
   border-radius:40px;
   padding:13px;
   color:rgba(0,0,0,0.6);
-  font-weight:bold;
-  font-size:16px;
+  font-weight:500;
+  font-size:15px;
+  text-indent:6px;
 }
 .search-button {
   &:hover {
