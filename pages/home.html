@@ -1,6 +1,8 @@
 
 <div class="banner cloudy">
     <div class="overlay cloudy">
+        <p class="currentDate">{{days[currentDate - 1]}}, 03, 2019</p>
+
         <div class="pajaro" style="top:80%">··</div>
         <div id="background-wrap">
       
@@ -24,12 +26,18 @@
             <h3>Cloudy</h3>
             <h4>Auckland, New Zealand</h4>
             <h2>14°</h2>
+
         </div>
+          <i class="material-icons down-arrow">
+            keyboard_arrow_down
+          </i>
     </div>
+
+
 </div>
 
 
-<nav class="nav nav-pills flex-row menu">
+<nav class="nav nav-pills flex-row menu" id="nav-pills">
     <a class="flex-sm-fill text-sm-center nav-link active" href="#">Weather</a>
     <a class="flex-sm-fill text-sm-center nav-link" href="#">News</a>
     <a class="flex-sm-fill text-sm-center nav-link" href="#">Photos</a>
