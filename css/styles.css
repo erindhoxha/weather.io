@@ -283,14 +283,12 @@
 
 @keyframes loader {
   0% {
-    height: 0vh;
+    height: 30vh;
   }
   50% {
-    height: 100vh;
-    transform-origin: top;
+    height: 101vh;
   }
   100% {
-    transform-origin: top;
     height: 0vh;
   }
 }
@@ -299,7 +297,7 @@
     height: 0vh;
   }
   50% {
-    height: 100vh;
+    height: 101vh;
   }
   100% {
     height: 0vh;
@@ -364,8 +362,8 @@ header h1 {
 }
 .card .arrow-active {
   position: absolute;
-  bottom: 32px;
-  left: 2px;
+  bottom: 28px;
+  left: -3px;
 }
 .card .card-body {
   display: flex;

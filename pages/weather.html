@@ -28,7 +28,7 @@
           </div>
       </div>
         <div class="weather-ui-banner text-center">
-            <h3>{{daysTemperatures[currentDate - 1].weather[0].main}}</h3>
+            <h3>{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h4>Auckland, New Zealand</h4>
             <h2>{{celsius}}°</h2>
 
@@ -53,13 +53,12 @@
     <div class="row">
         <div class="col-lg-12 col-xl-6 offset-xl-3 col-md-12 col-sm-12 col-xs-12 w-100 pop-cards" ng-repeat="list in daysTemperatures track by $index">
             <div class="card" style="width: 100%; margin-bottom:30px;">
-              <i class="fas fa-caret-right arrow-active" ng-if="$index == 1"></i>
+              <i class="material-icons arrow-active" ng-if="$index == 1">arrow_right</i>
                 <div class="card-body">
-                  <a class="card-title">{{days[$index]}}</a>
-                  <!-- <a class="card-subtitle mb-2 text-muted">{{list.weather[0].main}}</a> -->
+                  <a class="card-title"> {{days[$index]}} </a>
                   <div class="card-right-box">
-                    <a class="celsius">{{list.temp.max}}°C</a>
-                    <a class="card-description">Cloudy</a>
+                    <a class="celsius">{{formatNumber(list.temp.max)}}°C </a>
+                    <a class="card-description">{{list.weather[0].main}} </a>
                   </div>
                 </div>
               </div>

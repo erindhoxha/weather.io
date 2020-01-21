@@ -7,6 +7,10 @@ weatherApp.config(function($routeProvider) {
         templateUrl:'pages/weather.html',
         controller: 'weatherController'
     })
+    .when('/weather/:days', {
+        templateUrl:'pages/weather.html',
+        controller: 'weatherController'
+    })
     .when('/', {
         templateUrl:'pages/home.html',
         controller: 'homeController'
@@ -17,7 +21,7 @@ weatherApp.config(function($routeProvider) {
 // SERVICE
 weatherApp.service('cityService', function() {
     var self = this;
-    this.city = "New York, NY";
+    this.city = "";
 
     this.getLength = function() {
         return self.city.length;
