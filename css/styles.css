@@ -32,7 +32,7 @@
     background-position: 10% 0%;
   }
   to {
-    background-position: 30% 100%;
+    background-position: 30% 50%;
   }
 }
 @-webkit-keyframes b-position {
@@ -40,7 +40,7 @@
     background-position: 10% 0%;
   }
   to {
-    background-position: 30% 100%;
+    background-position: 30% 50%;
   }
 }
 @keyframes hide {
@@ -185,7 +185,7 @@ header h1 {
 }
 .card .arrow-active {
   position: absolute;
-  bottom: 30px;
+  bottom: 32px;
   left: 2px;
 }
 .card .card-body {
@@ -193,11 +193,20 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  transition: 0.4s ease-in-out;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 .card .card-body:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 1;
+}
+.card .card-body:hover .card-title, .card .card-body:hover .celsius {
+  transition: 0.3s ease-in-out;
+  opacity: 1 !important;
+  color: black !important;
+}
+.card .card-body:hover .card-description {
+  transition: 0.3s ease-in-out;
+  color: rgba(125, 197, 196, 0.818) !important;
 }
 .card a {
   margin-bottom: 0px;
@@ -211,6 +220,14 @@ header h1 {
 }
 .card .card-description {
   color: rgba(0, 0, 0, 0.35) !important;
+}
+
+.mdc-top-app-bar {
+  background-color: rgba(125, 197, 196, 0.818) !important;
+}
+
+.mdc-icon-button:focus, .mdc-icon-button:active {
+  outline: 0 !important;
 }
 
 html {
@@ -479,14 +496,14 @@ h3, h4, h5 {
   max-height: 70vh;
   min-height: 600px;
   background-size: cover;
+  background-position: 30% 50%;
   -webkit-animation-name: b-position;
   /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 2s;
   /* Safari 4.0 - 8.0 */
   animation-name: b-position;
-  animation-duration: 2.5s;
+  animation-duration: 2s;
   animation-timing-function: ease-in-out;
-  animation-direction: reverse;
 }
 
 .banner.cloudy {
