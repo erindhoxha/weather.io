@@ -34,8 +34,12 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
         // Check if it's day or night time
         const hours = new Date().getHours()
         const isDayTime = hours > 6 && hours < 20
+        if ($routeParams.day) {
+            $scope.currentDay = $routeParams.day;
+        }
         if (isDayTime) {
             $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.day);
+            console.log($scope.celsius);
         } else {
             $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.night);
         }
