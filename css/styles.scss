@@ -378,6 +378,14 @@ h3, h4, h5 {
     }
 }
 
+.pop-cards {
+  padding-left:0px !important;
+  padding-right:0px !important;
+  a {
+    text-decoration: none;
+  }
+}
+
 .nav.menu {
   padding-top:20px;
   text-align:center !important;
@@ -390,6 +398,7 @@ h3, h4, h5 {
     border-radius:0px !important;
     padding-bottom:20px;
     width:33.3333333333%;
+    text-decoration: none !important;
   }
   .active {
     background-color:transparent;
@@ -397,7 +406,7 @@ h3, h4, h5 {
     font-weight:700;
     opacity:1;
     z-index:1;
-    border-bottom:1px solid rgba(0, 0, 0, 0.342);
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
   }
   color:black;
 }
@@ -455,4 +464,5 @@ a.celsius {
   background-color: white;
   margin-top: -34px;
   width:100%;
+  box-shadow: -1px -56px 34px rgba(63, 63, 63, 0.094);
 }

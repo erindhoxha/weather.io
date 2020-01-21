@@ -10,10 +10,12 @@
    ========================================================================== */
 @keyframes pop {
   0% {
+    opacity: 0;
     transform: matrix(1, 2, -1, 1, 0, 0);
     color: white;
   }
   100% {
+    opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
     color: white;
   }
@@ -357,6 +359,9 @@ header h1 {
 .card a.active:before, .card span.active:before {
   content: ">";
 }
+.card .active-card {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
 .card .arrow-active {
   position: absolute;
   bottom: 28px;
@@ -367,8 +372,10 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  padding: 10px 15px 10px 15px !important;
 }
 .card .card-body:hover {
   opacity: 1;
@@ -792,6 +799,14 @@ h3, h4, h5 {
   animation-timing-function: ease-in-out;
 }
 
+.pop-cards {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.pop-cards a {
+  text-decoration: none;
+}
+
 .nav.menu {
   padding-top: 20px;
   text-align: center !important;
@@ -806,6 +821,7 @@ h3, h4, h5 {
   border-radius: 0px !important;
   padding-bottom: 20px;
   width: 33.3333333333%;
+  text-decoration: none !important;
 }
 .nav.menu .active {
   background-color: transparent;
@@ -813,7 +829,7 @@ h3, h4, h5 {
   font-weight: 700;
   opacity: 1;
   z-index: 1;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.342);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 a.celsius {
@@ -871,6 +887,7 @@ a.celsius {
   background-color: white;
   margin-top: -34px;
   width: 100%;
+  box-shadow: -1px -56px 34px rgba(63, 63, 63, 0.094);
 }
 
 /*# sourceMappingURL=styles.css.map */

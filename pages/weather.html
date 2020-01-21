@@ -6,7 +6,7 @@
 </div>
 <div ng-cloak class="banner cloudy">
     <div class="overlay cloudy">
-        <p ng-cloak class="currentDate">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE, MM, yyyy'}}</p>
+        <p ng-cloak class="currentDate" ng-if="daysTemperatures[currentDay].dt">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE, MM, yyyy'}}</p>
 
         <div class="pajaro" style="top:80%">··</div>
         <div id="background-wrap">
@@ -30,7 +30,7 @@
         <div class="weather-ui-banner text-center">
             <h3>{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h4>Auckland, New Zealand</h4>
-            <h2>{{celsius}}°</h2>
+            <h2 ng-cloak>{{celsius + '°'}}</h2>
 
         </div>
           <i class="material-icons down-arrow">
@@ -51,12 +51,12 @@
 
 
 <div class="container pt-4">
-    <div class="row">
+    <div class="row pt-2">
         <div class="col-lg-12 col-xl-12 offset-xl-12 col-md-12 col-sm-12 col-xs-12 w-100 pop-cards" ng-repeat="list in daysTemperatures track by $index">
           <a href="#/weather/{{$index}}">
             <div class="card" style="width: 100%; margin-bottom:30px;">
               <!-- <i class="material-icons arrow-active" ng-if="$index == 1">arrow_right</i> -->
-                  <div class="card-body">
+                  <div class="card-body" data-ng-class="{'active-card' : $index == 1}">
                     <span class="card-title"> {{days[$index]}} </span>
                     <div class="card-right-before-box ml-auto">
                     </div>

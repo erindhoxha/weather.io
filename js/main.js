@@ -28,4 +28,6 @@ weatherApp.service('cityService', function() {
     }
 })
 
-
+document.getElementsByTagName('a').addEventListener('click', function(e) {
+    e.preventDefault();
+})
