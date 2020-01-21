@@ -396,6 +396,7 @@ h3, h4, h5 {
     color:rgba(0, 0, 0, 0.8);
     font-weight:700;
     opacity:1;
+    z-index:1;
     border-bottom:1px solid rgba(0, 0, 0, 0.342);
   }
   color:black;
@@ -445,4 +446,13 @@ a.celsius {
   border-radius:30px;
   color:white !important;
   font-weight:bold;
+}
+
+.nav-secondary {
+  position: absolute;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: white;
+  margin-top: -34px;
+  width:100%;
 }

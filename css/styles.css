@@ -349,12 +349,12 @@ header h1 {
   border: none;
   margin-bottom: 0px !important;
 }
-.card a {
+.card a, .card span {
   font-size: 14.6px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.6) !important;
 }
-.card a.active:before {
+.card a.active:before, .card span.active:before {
   content: ">";
 }
 .card .arrow-active {
@@ -382,7 +382,7 @@ header h1 {
   transition: 0.3s ease-in-out;
   color: rgba(125, 197, 196, 0.818) !important;
 }
-.card a {
+.card a, .card span {
   margin-bottom: 0px;
 }
 .card .card-right-box {
@@ -414,7 +414,7 @@ header h1 {
   color: white;
   font-size: 40px !important;
   position: absolute;
-  bottom: 30px;
+  bottom: 70px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   border: 1px solid white;
@@ -429,7 +429,7 @@ header h1 {
 
 .search-icon {
   position: absolute;
-  top: 12.5px;
+  top: 16.5px;
   right: 16px;
   cursor: pointer;
   color: white;
@@ -812,6 +812,7 @@ h3, h4, h5 {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 700;
   opacity: 1;
+  z-index: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.342);
 }
 
@@ -861,6 +862,15 @@ a.celsius {
 .search-button:hover {
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-secondary {
+  position: absolute;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: white;
+  margin-top: -34px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,7 @@
 .card {
     border:none;
     margin-bottom:0px !important;
-    a {
+    a, span {
         font-size:14.6px;
         font-weight:700;
         color:rgba(0,0,0,0.6) !important;
@@ -34,7 +34,7 @@
             opacity:1;
         }
     }
-    a {
+    a, span {
         margin-bottom:0px;
     }
     .card-right-box {
