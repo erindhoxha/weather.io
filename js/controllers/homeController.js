@@ -1,5 +1,5 @@
 
-angular.module('weatherApp').controller('homeController', ['$scope','cityService', '$http', '$resource', 'getDayService', function($scope, cityService, $http, $resource, getDayService) {
+angular.module('weatherApp').controller('homeController', ['$scope','cityService', '$http', '$resource', 'getDayService', '$timeout', function($scope, cityService, $http, $resource, getDayService, $timeout) {
     $scope.key = '886705b4c1182eb1c69f28eb8c520e20';
     $scope.example = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=Auckland&units=metric&cnt=7&APPID=' + $scope.key;
     $scope.length = cityService.getLength();
@@ -11,6 +11,18 @@ angular.module('weatherApp').controller('homeController', ['$scope','cityService
     $scope.$watch('city', function() {
         cityService.city = $scope.city;
     })
+    
+    $scope.go = function(e) {
+        document.getElementById('loader').classList.remove('loader');
+        document.getElementById('secondloader').classList.remove('secondloader');
+       $timeout(function() {
+        document.getElementById('loader').classList.add('loader');
+        document.getElementById('secondloader').classList.add('secondloader');
+       }, 0)
+       $timeout(function() {
+        window.location.href = "#/weather";
+       }, 750)
+    }
 
     $http.get($scope.example)
     .success(function(response) {

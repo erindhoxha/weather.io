@@ -1,3 +1,12 @@
+<div class="loader-wrapper"  ng-controller="homeController">
+    <div class="loader" id="loader">
+    
+    </div>
+    <div class="secondloader" id="secondloader">
+      
+    </div>
+  </div>
+
 
 <div class="banner cloudy home">
     <div class="overlay cloudy">
@@ -26,8 +35,7 @@
         <div class="weather-ui-banner text-center">
             <h3>Search for a place</h3>
             <input type="search" placeholder="Eg. Auckland" name="search" class="search-input" ng-model="city">
-            <a href="#/weather" type="button" class="search-button">Go</a>
-
+            <a type="button" class="search-button" ng-click="go()">Go</a>
         </div>
     </div>
 
