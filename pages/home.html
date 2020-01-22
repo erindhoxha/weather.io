@@ -6,31 +6,14 @@
         <p ng-cloak class="currentDate" ng-if="daysTemperatures[currentDay].dt * 1000">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE, MM, yyyy'}}</p>
 
         <div class="pajaro" style="top:80%">··</div>
-        <div id="background-wrap">
-      
-          <div class="x2">
-              <div class="cloud"></div>
-          </div>
-      
-          <div class="x3">
-              <div class="cloud"></div>
-          </div>
-      
-          <div class="x4">
-              <div class="cloud"></div>
-          </div>
-      
-          <div class="x5">
-              <div class="cloud"></div>
-          </div>
-      </div>
+        
+        <clouds-render ng-click="consoleLog()" weather-day="daysTemperatures"></clouds-render>
+
         <div class="weather-ui-banner text-center">
             <h3>Search for a place</h3>
             <input type="search" placeholder="Eg. Auckland" name="search" class="search-input" ng-model="city">
             <a type="button" class="search-button" ng-click="go()">Go</a>
         </div>
     </div>
-
-
 </div>
 

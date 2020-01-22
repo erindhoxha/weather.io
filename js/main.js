@@ -1,30 +1,27 @@
 var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
-// CONFIG ROUTER
-weatherApp.config(function($routeProvider) {
-    $routeProvider
-    .when('/weather', {
-        templateUrl:'pages/weather.html',
-        controller: 'weatherController'
-    })
-    .when('/weather/:day', {
-        templateUrl:'pages/weather.html',
-        controller: 'weatherController'
-    })
-    .when('/', {
-        templateUrl:'pages/home.html',
-        controller: 'homeController'
-    })
+
+// DIRECTIVES
+weatherApp.directive('cloudsRender', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'js/directives/clouds.html',
+        replace:true,
+        scope: {
+            consoleLog: '&',
+            weatherDay: '='
+        }
+    }
 })
 
-
-// SERVICE
-weatherApp.service('cityService', function() {
-    var self = this;
-    this.city = "";
-
-    this.getLength = function() {
-        return self.city.length;
+weatherApp.directive('weatherPanel', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'js/directives/weatherPanel.html',
+        scope: {
+            daysTemp: '=',
+            cels: '=',
+        }
     }
 })
 

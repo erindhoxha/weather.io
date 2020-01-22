@@ -40,6 +40,10 @@ angular.module('weatherApp').controller('homeController', ['$scope','cityService
         return new Date(dt * 1000);
     }
 
+    $scope.consoleLog = function() {
+        console.log('Clicked');
+    }
+
 }])
 
 

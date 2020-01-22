@@ -25,6 +25,10 @@
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
   <meta name="theme-color" content="#fafafa">
+  <script src="js/main.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+
 </head>
 
 <body>
@@ -42,11 +46,10 @@
         </i>
     </div>
   </header>
-
   <!-- Add your site or application content here -->
   <div class="loader-wrapper"  ng-controller="homeController">
     <div class="loader" id="loader">
-    
+      
     </div>
     <div class="secondloader" id="secondloader">
       
@@ -59,12 +62,12 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
 
   <!-- Controllers -->
   <script type="text/javascript" src="./js/controllers/homeController.js"></script>
   <script type="text/javascript" src="./js/controllers/weatherController.js"></script>
   <script type="text/javascript" src="./js/services/getDayService.js"></script>
+  <script type="text/javascript" src="./js/directives/clouds.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

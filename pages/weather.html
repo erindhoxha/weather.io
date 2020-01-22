@@ -5,30 +5,15 @@
         <p ng-cloak class="currentDate" ng-if="daysTemperatures[currentDay].dt">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE, MM, yyyy'}}</p>
 
         <div class="pajaro" style="top:80%">··</div>
-        <div id="background-wrap">
-      
-          <div class="x2">
-              <div class="cloud"></div>
-          </div>
-      
-          <div class="x3">
-              <div class="cloud"></div>
-          </div>
-      
-          <div class="x4">
-              <div class="cloud"></div>
-          </div>
-      
-          <div class="x5">
-              <div class="cloud"></div>
-          </div>
-      </div>
+
+        <clouds-render></clouds-render>
+
         <div class="weather-ui-banner text-center">
             <h3>{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h4>Auckland, New Zealand</h4>
             <h2 ng-cloak>{{celsius + '°'}}</h2>
-
         </div>
+        
           <i class="material-icons down-arrow">
             keyboard_arrow_down
           </i>
