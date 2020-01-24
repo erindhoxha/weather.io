@@ -2,7 +2,7 @@
 
 <div ng-cloak class="banner cloudy">
     <div class="overlay cloudy">
-        <p ng-cloak class="currentDate" ng-if="daysTemperatures[currentDay].dt">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE, MM, yyyy'}}</p>
+        <p ng-cloak class="currentDate" ng-if="daysTemperatures[currentDay].dt">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE - dd/MM/yyyy'}}</p>
 
         <div class="pajaro" style="top:80%">··</div>
 
@@ -12,7 +12,7 @@
             <h3 ng-if="!currentDay">{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h3 ng-if="currentDay">{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h4>Auckland, New Zealand</h4>
-            <h2 ng-cloak>{{formatNumber(daysTemperatures[currentDay].temp.day) + '°'}}</h2>
+            <h2 ng-cloak ng-if="formatNumber(daysTemperatures[currentDay].temp.day)">{{formatNumber(daysTemperatures[currentDay].temp.day) + '°'}}</h2>
         </div>
         
           <i class="material-icons down-arrow">
