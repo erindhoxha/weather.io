@@ -2,11 +2,6 @@
 angular.module('weatherApp').controller('homeController', ['$scope','cityService', '$http', '$resource', 'getDayService', '$timeout','$routeParams', function($scope, cityService, $http, $resource, getDayService, $timeout, $routeParams) {
     $scope.key = '886705b4c1182eb1c69f28eb8c520e20';
     $scope.example = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=Auckland&units=metric&cnt=7&APPID=' + $scope.key;
-    $scope.length = cityService.getLength();
-
-    $scope.days = ['Sunday' ,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    $scope.currentDay = getDayService.getCurrentDay();
-
     $scope.weatherLoaded = getDayService.notLoaded;
 
     $scope.city = cityService.city;
@@ -33,22 +28,16 @@ angular.module('weatherApp').controller('homeController', ['$scope','cityService
     $http.get($scope.example)
     .success(function(response) {
         $scope.daysTemperatures = response.list;
+        $scope.currentDay = new Date().getDay();
+        $scope.date = new Date(response.list[0].dt * 1000)
     })
+
     .error(function(e) {
+        // Error will be here
         console.log(e);
     })
 
     $scope.convertToDate = function(dt) {
-        return new Date(dt * 1000);
+        return new Date(dt * 999.7);
     }
-
-    $scope.consoleLog = function() {
-        console.log('Clicked');
-    }
-
 }])
-
-
-
-// Resource
-

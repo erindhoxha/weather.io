@@ -15,21 +15,21 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
     $scope.example = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + $scope.city + '&units=metric&cnt=7&APPID=' + $scope.key;
     $scope.length = cityService.getLength();
 
-    $scope.currentDay = new Date().getDay();
     $scope.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     $http.get($scope.example)
     .success(function(response) {
 
         $scope.daysTemperatures = response.list;
+        $scope.currentDay = new Date().getDay();
 
         console.log(response);
 
         $scope.icons = [];
-
         angular.forEach($scope.daysTemperatures, function(item) {
             $scope.icons.push('http://openweathermap.org/img/wn/' + item.weather[0].icon + '@2x.png');
         })
+
         // Check if it's day or night time
         const hours = new Date().getHours()
         const isDayTime = hours > 6 && hours < 20
@@ -37,10 +37,11 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
         if ($routeParams.day) {
             $scope.currentDay = $routeParams.day;
         }
+
         if (isDayTime) {
-            $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.day);
+                $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.day);
         } else {
-            $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.night);
+                $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.night);
         }
         getDayService.notLoaded = false;
     })
@@ -53,8 +54,9 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
         return Math.round(i); 
     }
 
+
     $scope.convertToDate = function(dt) {
-        return new Date(dt * 1000);
+        return new Date(dt * 999.7);
     }
 
     console.log($routeParams);

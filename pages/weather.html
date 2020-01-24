@@ -9,9 +9,10 @@
         <clouds-render></clouds-render>
 
         <div class="weather-ui-banner text-center">
-            <h3>{{daysTemperatures[currentDay].weather[0].main}}</h3>
+            <h3 ng-if="!currentDay">{{daysTemperatures[currentDay].weather[0].main}}</h3>
+            <h3 ng-if="currentDay">{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h4>Auckland, New Zealand</h4>
-            <h2 ng-cloak>{{celsius + '°'}}</h2>
+            <h2 ng-cloak>{{formatNumber(daysTemperatures[currentDay].temp.day) + '°'}}</h2>
         </div>
         
           <i class="material-icons down-arrow">
@@ -40,7 +41,7 @@
                     <div class="card-right-before-box ml-auto">
                     </div>
                     <div class="card-right-box">
-                      <span class="celsius text-right">{{formatNumber(list.temp.max)}}°C </span>
+                      <span class="celsius text-right">{{formatNumber(list.temp.day)}}°C </span>
                       <span class="card-description">{{list.weather[0].main}} </span>
                     </div>
                       <img style="width:60px;" src="{{icons[$index]}}">
