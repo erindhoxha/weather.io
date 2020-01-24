@@ -13,6 +13,7 @@
             <h3>Search for a place</h3>
             <input type="search" placeholder="Eg. Auckland" name="search" class="search-input" ng-model="city">
             <a type="button" class="search-button" ng-click="go()">Go</a>
+            <small ng-if="weatherLoaded" class="error">Could not find a place with that name, please try again.</small>
         </div>
     </div>
 </div>

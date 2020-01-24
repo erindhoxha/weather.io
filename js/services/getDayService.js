@@ -2,6 +2,8 @@
 angular.module('weatherApp').service('getDayService', function() {
     var self = this;
 
+    this.notLoaded = false;
+
     this.getCurrentDay = function() {
         return new Date().getDay();
     }

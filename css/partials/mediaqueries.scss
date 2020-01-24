@@ -1,0 +1,15 @@
+@media only screen and (min-width: 1024px) {
+  .weather-ui-banner {
+    width:500px !important;
+    input {
+      padding-top:20px;
+      padding-bottom:20px;
+      font-size:18.5px;
+      font-weight:500 !important;
+    }
+    a.search-button {
+      padding:15px 10px 15px 10px !important;
+      cursor:pointer;
+    }
+  }
+}

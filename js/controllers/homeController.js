@@ -7,6 +7,8 @@ angular.module('weatherApp').controller('homeController', ['$scope','cityService
     $scope.days = ['Sunday' ,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     $scope.currentDay = getDayService.getCurrentDay();
 
+    $scope.weatherLoaded = getDayService.notLoaded;
+
     $scope.city = cityService.city;
     $scope.$watch('city', function() {
         cityService.city = $scope.city;

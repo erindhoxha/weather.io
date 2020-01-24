@@ -1,6 +1,6 @@
 // CONTROLLERS
 
-angular.module('weatherApp').controller('weatherController', ['$scope','cityService','$http', '$resource', '$timeout', '$routeParams', '$window', function($scope, cityService, $http, $resource, $timeout, $routeParams, $window) {
+angular.module('weatherApp').controller('weatherController', ['$scope','cityService','$http', '$resource', '$timeout', '$routeParams', '$window', '$location', 'getDayService', function($scope, cityService, $http, $resource, $timeout, $routeParams, $window, $location, getDayService) {
 
     // hide birds, when loaded
     $timeout(function() {
@@ -9,7 +9,6 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
           bird.classList.add('hide');
         });
     }, 0)
-
     $scope.city = cityService.city;
     // key, example of the API call
     $scope.key = '886705b4c1182eb1c69f28eb8c520e20';
@@ -34,20 +33,20 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
         // Check if it's day or night time
         const hours = new Date().getHours()
         const isDayTime = hours > 6 && hours < 20
+
         if ($routeParams.day) {
             $scope.currentDay = $routeParams.day;
         }
         if (isDayTime) {
             $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.day);
-            console.log($scope.celsius);
         } else {
             $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.night);
         }
-
+        getDayService.notLoaded = false;
     })
-
     .error(function(e) {
         $window.location.href = '#/';
+        getDayService.notLoaded = true;
     })
 
     $scope.formatNumber = function(i) {
