@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1024px) {
   .left-sidebar {
-    max-width:500px;
+    max-width:500px
   }
   .weather-ui-banner {
     width:500px !important;
@@ -14,5 +14,10 @@
       padding:15px 10px 15px 10px !important;
       cursor:pointer;
     }
+  }
+  .nav.menu, .weather-menu{
+    max-width:700px;
+    margin:0 auto;
+    padding-bottom:30px;
   }
 }

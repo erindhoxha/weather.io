@@ -355,6 +355,7 @@ header .left-sidebar {
   top: 0;
   z-index: 999999999;
   background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: -1px -56px 34px rgba(63, 63, 63, 0.094);
 }
 header .left-sidebar a {
   text-decoration: none;
@@ -503,6 +504,12 @@ header .left-sidebar .close-icon:hover {
   .weather-ui-banner a.search-button {
     padding: 15px 10px 15px 10px !important;
     cursor: pointer;
+  }
+
+  .nav.menu, .weather-menu {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-bottom: 30px;
   }
 }
 html {
@@ -794,12 +801,29 @@ h3, h4, h5 {
   animation-timing-function: ease-in-out;
 }
 
+.banner, .overlay {
+  transition: 0.3s ease-in-out;
+  min-height: 600px;
+}
+
 .banner.cloudy {
   background-image: url("../img/cloudy-01.svg");
 }
 
 .overlay.cloudy {
   background-color: rgba(125, 197, 196, 0.818);
+}
+
+.banner.rainy {
+  background-image: url("../img/rainy.jpeg");
+}
+
+.overlay.rainy {
+  background-color: rgba(125, 150, 197, 0.818);
+}
+
+.weather-body {
+  height: 101vh;
 }
 
 .overlay {

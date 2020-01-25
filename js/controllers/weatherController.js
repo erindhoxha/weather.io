@@ -1,6 +1,6 @@
 // CONTROLLERS
 
-angular.module('weatherApp').controller('weatherController', ['$scope','cityService','$http', '$resource', '$timeout', '$routeParams', '$window', '$location', 'getDayService', function($scope, cityService, $http, $resource, $timeout, $routeParams, $window, $location, getDayService) {
+angular.module('weatherApp').controller('weatherController', ['$scope','cityService','$http', '$resource', '$timeout', '$routeParams', '$window', '$location', 'getDayService', '$rootScope', '$window', function($scope, cityService, $http, $resource, $timeout, $routeParams, $window, $location, getDayService, $rootScope, $window) {
 
     // hide birds, when loaded
     $timeout(function() {
@@ -16,19 +16,23 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
     $scope.length = cityService.getLength();
 
     $scope.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    $rootScope.bodyClass = 'weatherBody';
 
     $http.get($scope.example)
     .success(function(response) {
 
         $scope.daysTemperatures = response.list;
         $scope.currentDay = new Date().getDay();
+        $scope.currentDayClick = new Date().getDay();
 
         console.log(response);
 
         $scope.icons = [];
-        angular.forEach($scope.daysTemperatures, function(item) {
-            $scope.icons.push('http://openweathermap.org/img/wn/' + item.weather[0].icon + '@2x.png');
-        })
+            angular.forEach($scope.daysTemperatures, function(item) {
+                if (item.weather[0].icon) {
+                    $scope.icons.push('http://openweathermap.org/img/wn/' + item.weather[0].icon + '@2x.png');
+                }
+            })
 
         // Check if it's day or night time
         const hours = new Date().getHours()
@@ -41,7 +45,7 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
         if (isDayTime) {
                 $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.day);
         } else {
-                $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.night);
+                $scope.celsius = Math.floor(response.list[$scope.currentDay].temp.day);
         }
         getDayService.notLoaded = false;
     })
@@ -53,12 +57,14 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
     $scope.formatNumber = function(i) {
         return Math.round(i); 
     }
-
-
     $scope.convertToDate = function(dt) {
         return new Date(dt * 999.7);
     }
-
-    console.log($routeParams);
-
+    $scope.click = function(index, e) {
+        console.log(e);
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        $window.scrollTo(0, 0);
+        $location.path("weather/" + index);
+    }
 }])

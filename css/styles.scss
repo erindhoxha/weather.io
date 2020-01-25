@@ -311,11 +311,24 @@ h3, h4, h5 {
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
 }
+.banner, .overlay {
+  transition:0.3s ease-in-out;
+  min-height:600px;
+}
 .banner.cloudy {
     background-image:url('../img/cloudy-01.svg');
 }
 .overlay.cloudy {
     background-color:rgba(125, 197, 196, 0.818);
+}
+.banner.rainy {
+  background-image: url('../img/rainy.jpeg');
+}
+.overlay.rainy {
+  background-color: rgba(125, 150, 197, 0.818);
+}
+.weather-body {
+  height:101vh;
 }
 .overlay {
     position:relative;

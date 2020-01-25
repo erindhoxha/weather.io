@@ -1,8 +1,11 @@
 
 
-<div ng-cloak class="banner cloudy">
-    <div class="overlay cloudy">
-        <p ng-cloak class="currentDate" ng-if="daysTemperatures[currentDay].dt">{{convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE - dd/MM/yyyy'}}</p>
+<div class="banner cloudy" ng-class="{'cloudy' : daysTemperatures[currentDay].weather[0].main == 'Clouds', 'rainy' : daysTemperatures[currentDay].weather[0].main == 'Rain'}">
+    <div class="overlay cloudy" ng-class="{'cloudy' : daysTemperatures[currentDay].weather[0].main == 'Clouds', 'rainy' : daysTemperatures[currentDay].weather[0].main == 'Rain'}">
+        <p class="currentDate" ng-if="daysTemperatures[currentDayClick].dt">
+          {{days[currentDay]}}
+          {{convertToDate(daysTemperatures[currentDayClick].dt) | date : 'dd/MM/yyyy'}}
+        </p>
 
         <div class="pajaro" style="top:80%">··</div>
 
@@ -12,7 +15,7 @@
             <h3 ng-if="!currentDay">{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h3 ng-if="currentDay">{{daysTemperatures[currentDay].weather[0].main}}</h3>
             <h4>Auckland, New Zealand</h4>
-            <h2 ng-cloak ng-if="formatNumber(daysTemperatures[currentDay].temp.day)">{{formatNumber(daysTemperatures[currentDay].temp.day) + '°'}}</h2>
+            <h2 ng-if="formatNumber(daysTemperatures[currentDay].temp.day)">{{formatNumber(daysTemperatures[currentDay].temp.day) + '°'}}</h2>
         </div>
         
           <i class="material-icons down-arrow">
@@ -31,9 +34,9 @@
 
 
 <div class="container pt-4">
-    <div class="row pt-2">
+    <div class="row pt-2 weather-menu">
         <div class="col-lg-12 col-xl-12 offset-xl-12 col-md-12 col-sm-12 col-xs-12 w-100 pop-cards" ng-repeat="list in daysTemperatures track by $index">
-          <a href="#/weather/{{$index}}">
+          <a id="{{$index}}" class="clickPage" ng-click="click($index, $event)">
             <div class="card" style="width: 100%; margin-bottom:30px;">
               <!-- <i class="material-icons arrow-active" ng-if="$index == 1">arrow_right</i> -->
                   <div class="card-body" data-ng-class="{'active-card' : $index ==  $scope.currentDay}">
@@ -47,7 +50,7 @@
                       <img style="width:60px;" src="{{icons[$index]}}">
                   </div>
                 </div>
-                </a>
+                </a >
             </div>
         </div>
   </div>

@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body ng-class="{'weather-body' : bodyClass == 'weatherBody'}">
 
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -85,7 +85,6 @@
   <script type="text/javascript" src="./js/controllers/homeController.js"></script>
   <script type="text/javascript" src="./js/controllers/weatherController.js"></script>
   <script type="text/javascript" src="./js/services/getDayService.js"></script>
-  <script type="text/javascript" src="./js/directives/clouds.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

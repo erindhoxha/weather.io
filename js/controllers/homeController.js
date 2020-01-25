@@ -1,5 +1,5 @@
 
-angular.module('weatherApp').controller('homeController', ['$scope','cityService', '$http', '$resource', 'getDayService', '$timeout','$routeParams', function($scope, cityService, $http, $resource, getDayService, $timeout, $routeParams) {
+angular.module('weatherApp').controller('homeController', ['$scope','cityService', '$http', '$resource', 'getDayService', '$timeout','$routeParams', '$rootScope', function($scope, cityService, $http, $resource, getDayService, $timeout, $routeParams, $rootScope) {
     $scope.key = '886705b4c1182eb1c69f28eb8c520e20';
     $scope.example = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=Auckland&units=metric&cnt=7&APPID=' + $scope.key;
     $scope.weatherLoaded = getDayService.notLoaded;
@@ -8,6 +8,8 @@ angular.module('weatherApp').controller('homeController', ['$scope','cityService
     $scope.$watch('city', function() {
         cityService.city = $scope.city;
     })
+
+    $rootScope.bodyClass = "homeBody";
     
     $scope.go = function(e) {
         document.getElementById('loader').classList.remove('loader');

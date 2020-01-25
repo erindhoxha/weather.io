@@ -51,6 +51,7 @@ header {
         top:0;
         z-index:999999999;
         background-color:rgba(255,255,255,0.94);
+        box-shadow: -1px -56px 34px rgba(63, 63, 63, 0.094);
         .close-icon {
           color: $primary;
           border-radius:50px !important;
