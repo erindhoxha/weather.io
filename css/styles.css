@@ -381,7 +381,7 @@ header .left-sidebar .close-icon {
   border-radius: 50px !important;
   position: absolute;
   right: 10px;
-  top: 10px;
+  left: 10px;
   font-size: 28px !important;
   cursor: pointer;
   background-color: rgba(125, 197, 196, 0.2) !important;
