@@ -24,4 +24,3 @@ weatherApp.directive('weatherPanel', function() {
         }
     }
 })
-

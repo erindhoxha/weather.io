@@ -24,12 +24,47 @@ header {
         z-index:2;
     }
     .left-sidebar {
+        a {
+            text-decoration: none;
+        }
+        ul {
+            padding-top:50px;
+            color:black;
+            white-space:nowrap;
+            li {
+                &:hover {
+                    color:black;
+                }
+                transition:0.3s ease-in-out;
+                list-style-type: none;
+                color:$primary;
+                font-size:32px;
+                font-weight:600;
+                margin-top:20px;
+            }
+        }
+        overflow:hidden;
         height:100vh;
-        width:70vw;
+        width:0vw;
         position:absolute;
         left:0;
         top:0;
         z-index:999999999;
-        background-color:white;
+        background-color:rgba(255,255,255,0.94);
+        .close-icon {
+          color: $primary;
+          border-radius:50px !important;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          font-size: 28px !important;
+          cursor: pointer;
+          background-color:$shadow !important;
+          padding:3px;
+          &:hover {
+              background-color:$primary !important;
+              color:white !important;
+          }
+        }
     }
 }

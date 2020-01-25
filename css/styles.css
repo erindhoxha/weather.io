@@ -347,13 +347,48 @@ header h1 {
   z-index: 2;
 }
 header .left-sidebar {
+  overflow: hidden;
   height: 100vh;
-  width: 70vw;
+  width: 0vw;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 999999999;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.94);
+}
+header .left-sidebar a {
+  text-decoration: none;
+}
+header .left-sidebar ul {
+  padding-top: 50px;
+  color: black;
+  white-space: nowrap;
+}
+header .left-sidebar ul li {
+  transition: 0.3s ease-in-out;
+  list-style-type: none;
+  color: #7dc5c4;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+header .left-sidebar ul li:hover {
+  color: black;
+}
+header .left-sidebar .close-icon {
+  color: #7dc5c4;
+  border-radius: 50px !important;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 28px !important;
+  cursor: pointer;
+  background-color: rgba(125, 197, 196, 0.2) !important;
+  padding: 3px;
+}
+header .left-sidebar .close-icon:hover {
+  background-color: #7dc5c4 !important;
+  color: white !important;
 }
 
 .card {
@@ -452,6 +487,10 @@ header .left-sidebar {
 }
 
 @media only screen and (min-width: 1024px) {
+  .left-sidebar {
+    max-width: 500px;
+  }
+
   .weather-ui-banner {
     width: 500px !important;
   }
@@ -724,7 +763,7 @@ body {
 }
 
 a {
-  color: blue;
+  color: #7dc5c4;
 }
 
 p {

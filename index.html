@@ -32,22 +32,37 @@
 </head>
 
 <body>
+
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
   <header class="mdc-top-app-bar">
+    <div class="left-sidebar">
+      <ul>
+        <a href="#">
+          <li>About us</li>
+        </a>
+        <a href="#">
+          <li>WeatherAPI</li>
+        <a href="#">
+          <li>Contact</li>
+        </a>
+        </a>
+      </ul>
+      <i class="material-icons close-icon" onclick="haminate()">
+        close
+      </i>
+    </div>
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="haminate()">menu</button>
         <span class="mdc-top-app-bar__title"><a href="#/">weather.io</a></span>
       </section>
         <i class="material-icons search-icon">
           search
         </i>
     </div>
-    <div class="left-sidebar">
-      
-    </div>
+
   </header>
   <!-- Add your site or application content here -->
   <div class="loader-wrapper"  ng-controller="homeController">
@@ -78,6 +93,8 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="js/gsapAnimations.js"></script>
+
 </body>
 
 </html>
