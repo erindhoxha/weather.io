@@ -4,7 +4,8 @@
     <div class="overlay cloudy">
         <!-- <p class="currentDate">{{days[currentDay]}}, 03, 2019</p> -->
         <p ng-cloak class="currentDate" ng-if="daysTemperatures[currentDay].dt">
-            {{ convertToDate(daysTemperatures[currentDay].dt) | date : 'EEEE - dd/MM/yyyy'}}
+            {{days[currentDay]}}
+            {{ convertToDate(daysTemperatures[currentDay].dt) | date : 'dd/MM/yyyy'}}
         </p>
 
         <div class="pajaro" style="top:80%">··</div>

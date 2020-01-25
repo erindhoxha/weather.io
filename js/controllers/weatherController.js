@@ -25,15 +25,6 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
         $scope.currentDay = new Date().getDay();
         $scope.currentDayClick = new Date().getDay();
 
-        console.log(response);
-
-        $scope.icons = [];
-            angular.forEach($scope.daysTemperatures, function(item) {
-                if (item.weather[0].icon) {
-                    $scope.icons.push('http://openweathermap.org/img/wn/' + item.weather[0].icon + '@2x.png');
-                }
-            })
-
         // Check if it's day or night time
         const hours = new Date().getHours()
         const isDayTime = hours > 6 && hours < 20
@@ -61,10 +52,14 @@ angular.module('weatherApp').controller('weatherController', ['$scope','cityServ
         return new Date(dt * 999.7);
     }
     $scope.click = function(index, e) {
+        $window.scrollTo(0, 0);
+
         console.log(e);
         e.stopImmediatePropagation();
         e.preventDefault();
-        $window.scrollTo(0, 0);
         $location.path("weather/" + index);
+    }
+    $scope.scrollBottom = function() {
+        $window.scrollTo(1000, 10000);
     }
 }])

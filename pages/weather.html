@@ -18,7 +18,7 @@
             <h2 ng-if="formatNumber(daysTemperatures[currentDay].temp.day)">{{formatNumber(daysTemperatures[currentDay].temp.day) + '°'}}</h2>
         </div>
         
-          <i class="material-icons down-arrow">
+          <i class="material-icons down-arrow" ng-click="scrollBottom()">
             keyboard_arrow_down
           </i>
     </div>
@@ -47,7 +47,7 @@
                       <span class="celsius text-right">{{formatNumber(list.temp.day)}}°C </span>
                       <span class="card-description">{{list.weather[0].main}} </span>
                     </div>
-                      <img style="width:60px;" src="{{icons[$index]}}">
+                      <img style="width:60px;" src="{{'http://openweathermap.org/img/wn/' + list.weather[0].icon + '@2x.png'}}">
                   </div>
                 </div>
                 </a >
